@@ -15,7 +15,7 @@ body::before {
 }
 
 body::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 
 body::-webkit-scrollbar-track {
@@ -25,7 +25,6 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: #d9a337;
     border-radius: 20px;
-    border: 2px solid #003049;
 }
 
 .cards-container {
@@ -33,7 +32,6 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16px;
 }
 
 .container {
@@ -128,7 +126,7 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.6vw;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1500px) {
     .card__title, .card__price {
         font-size: 1.5rem;
     }

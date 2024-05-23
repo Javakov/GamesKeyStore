@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/fonts.css">
     <link rel="stylesheet" href="/static/css/scroll_buttons.css">
+    <link rel="stylesheet" href="/static/css/search_view.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
     <title>Javakov Keys</title>
 </head>
 <body>
+<div class="search-bar">
+    <label>
+        <input class="ubuntu-regular" type="search" placeholder="Поиск...">
+    </label>
+</div>
+
 <div class="cards-container">
     <div class="container">
         <div class="card">
@@ -115,7 +121,11 @@
     </div>
 </div>
 
-<div class="scroll-buttons">
+<a class="margin link" href="https://javakov.github.io/me/" target="_blank">
+    <div class="footer">© 2024 Javakov</div>
+</a>
+
+<div id="slider" class="scroll-buttons">
     <button class="scroll-button scroll-up">
         <i class="material-icons">arrow_downward</i>
     </button>
