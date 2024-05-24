@@ -1,165 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/fonts.css">
-    <link rel="stylesheet" href="/static/css/scroll_buttons.css">
-    <link rel="stylesheet" href="/static/css/search_view.css">
-    <link rel="stylesheet" href="/static/css/footer.css">
-    <title>Javakov Keys</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/search_view.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title th:text="${title}"></title>
 </head>
 <body>
-<div class="search-bar">
-    <label>
-        <input class="ubuntu-regular" type="search" placeholder="Поиск...">
-    </label>
+
+<div class="margin">
+    <div class="search-bar">
+        <div class="">
+            <span class="ubuntu-medium title">Javakov</span>
+            <span class="ubuntu-regular title">Key Store</span>
+        </div>
+        <label>
+            <input class="ubuntu-regular" type="search" placeholder="Поиск...">
+        </label>
+    </div>
 </div>
 
-<div class="cards-container">
+<div id="cardsContainer" class="cards-container">
     <div class="container">
-        <div class="card">
-            <div class="card__title ubuntu-medium">Minecraft</div>
-            <img src="https://cq.ru/img/f/e/2023/11/08/8992.jpg" alt="Game 1"
-                 class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Elden Ring</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/951/583/798/fantasy-art-warrior-dark-souls-iii-dark-souls-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">CyberPunk</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/478/422/462/cyberpunk-2077-games-ps-games-xbox-games-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Pubg</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/169/715/816/pubg-playerunknowns-battlegrounds-2018-games-games-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">The Witcher 3</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/527/620/961/the-witcher-video-games-wolf-the-witcher-3-wild-hunt-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Call of Duty 2</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/898/294/539/call-of-duty-call-of-duty-modern-warfare-2-illustration-digital-art-4k-hd-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Batman: Arkham City</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/849/1015/727/batman-batman-logo-video-games-batman-arkham-origins-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Assassin's Creed</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/67/241/223/assassin-s-creed-valhalla-video-games-video-game-art-digital-art-viking-hd-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Minecraft</div>
-            <img src="https://trumpwallpapers.com/wp-content/uploads/Minecraft-Wallpaper-29-1920x1080-1.jpg"
-                 alt="Game 1"
-                 class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Elden Ring</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/951/583/798/fantasy-art-warrior-dark-souls-iii-dark-souls-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">CyberPunk</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/478/422/462/cyberpunk-2077-games-ps-games-xbox-games-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Pubg</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/169/715/816/pubg-playerunknowns-battlegrounds-2018-games-games-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">The Witcher 3</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/527/620/961/the-witcher-video-games-wolf-the-witcher-3-wild-hunt-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Call of Duty 2</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/898/294/539/call-of-duty-call-of-duty-modern-warfare-2-illustration-digital-art-4k-hd-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Batman: Arkham City</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/849/1015/727/batman-batman-logo-video-games-batman-arkham-origins-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
-        </div>
-        <div class="card">
-            <div class="card__title ubuntu-medium">Assassin's Creed</div>
-            <img src="https://c4.wallpaperflare.com/wallpaper/67/241/223/assassin-s-creed-valhalla-video-games-video-game-art-digital-art-viking-hd-wallpaper-preview.jpg"
-                 alt="Game 1" class="card__image">
-            <div class="card__price ubuntu-regular">$0.49</div>
+        <div class="card" th:each="game : ${games}">
+            <div class="card__title ubuntu-medium">
+                <span th:text="${game.name}"></span>
+            </div>
+            <img th:src="${game.imgUrl}" class="card__image" alt="">
+            <div class="card__price ubuntu-regular">
+                <span th:text="'₽' + ${game.price}"></span>
+            </div>
         </div>
     </div>
 </div>
 
 <a class="margin link" href="https://javakov.github.io/me/" target="_blank">
-    <div class="footer">© 2024 Javakov</div>
+    <div class="footer ubuntu-regular">© 2024 Javakov</div>
 </a>
-
-<div id="slider" class="scroll-buttons">
-    <button class="scroll-button scroll-up">
-        <i class="material-icons">arrow_downward</i>
-    </button>
-    <button class="scroll-button scroll-down">
-        <i class="material-icons">arrow_downward</i>
-    </button>
-</div>
-
-<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-<script>
-    const scrollButtons = document.querySelector('.scroll-buttons');
-    const scrollUpButton = scrollButtons.querySelector('.scroll-up');
-    const scrollDownButton = scrollButtons.querySelector('.scroll-down');
-
-    const cardContainer = document.querySelector('.container');
-    const cardCount = cardContainer.querySelectorAll('.card').length;
-    const cardHeight = cardContainer.offsetHeight / cardCount;
-    const scrollStep = Math.round(cardHeight * 4);
-
-    scrollUpButton.addEventListener('click', () => {
-        window.scrollBy({
-            top: -scrollStep,
-            behavior: 'smooth'
-        });
-    });
-
-    scrollDownButton.addEventListener('click', () => {
-        window.scrollBy({
-            top: scrollStep,
-            behavior: 'smooth'
-        });
-    });
-</script>
 
 </body>
 </html>

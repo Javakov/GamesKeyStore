@@ -31,7 +31,9 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     width: 100%;
     max-width: 1200px;
+    padding-top: 80px;
     margin: 0 auto;
+    z-index: 0;
 }
 
 .container {
@@ -109,13 +111,13 @@ body::-webkit-scrollbar-thumb {
     font-size: 1.5vw;
 }
 
+.card__title, .card__price {
+    transition: color 0.3s, font-size 0.3s;
+}
+
 .card:hover .card__title,
 .card:hover .card__price {
     color: #d9a337;
-}
-
-.card__title, .card__price {
-    transition: color 0.3s, font-size 0.3s;
 }
 
 .card:hover .card__title {
