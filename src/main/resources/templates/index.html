@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/search_view.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/popup.css">
     <title th:text="${title}"></title>
 </head>
 <body>
@@ -17,7 +18,7 @@
     <div class="search-bar">
         <a class="redirect" href="/">
             <span class="ubuntu-medium javakov">Javakov</span>
-            <span class="ubuntu-regular keystore">Key Store</span>
+            <span class="ubuntu-regular keystore">Game Store</span>
         </a>
         <form th:action="@{/search}" method="get">
             <label>
@@ -41,6 +42,13 @@
     </div>
 </div>
 
+<div class="popup-container" style="display: none;">
+    <div class="popup">
+        <p id="popup-text" class="ubuntu-regular"></p>
+        <a href="https://t.me/javakov" class="tg-button link ubuntu-medium" target="_blank">Написать</a>
+        <button class="close-popup ubuntu-medium">Выбрать другую игру</button>
+    </div>
+</div>
 <a class="margin link" href="https://javakov.github.io/me/" target="_blank">
     <div class="footer ubuntu-regular">© 2024 Javakov</div>
 </a>
@@ -52,6 +60,26 @@
     if (searchQuery) {
         document.getElementById('searchInput').value = searchQuery;
     }
+</script>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+    const popupContainer = document.querySelector('.popup-container');
+    const popupText = document.querySelector('#popup-text');
+
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            const gameName = card.querySelector('.card__title span').textContent;
+            const gamePrice = card.querySelector('.card__price span').textContent;
+            popupText.innerHTML = `Вы выбрали <span class="highlight">${gameName}</span>!\nЦена игры <span class="highlight">${gamePrice}</span>.\nНапишите <span class="highlight">@javakov</span> в <span class="highlight-tg">Telegram</span> для уточнения наличия игры.`;
+            popupText.style.lineHeight = '2';
+            popupContainer.style.display = 'flex';
+        });
+    });
+
+    document.querySelector('.close-popup').addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+    });
 </script>
 
 </body>

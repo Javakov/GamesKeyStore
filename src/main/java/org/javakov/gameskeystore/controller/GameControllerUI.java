@@ -27,7 +27,7 @@ public class GameControllerUI {
                               Model model) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         Page<GameOutDTO> gamePage = gameService.getAllGames(pageable);
-        model.addAttribute("title", "Javakov Key Store");
+        model.addAttribute("title", "Javakov Game Store");
         model.addAttribute("games", gamePage.getContent());
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", gamePage.getTotalPages());
