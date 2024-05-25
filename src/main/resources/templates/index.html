@@ -15,18 +15,20 @@
 
 <div class="margin">
     <div class="search-bar">
-        <div class="">
-            <span class="ubuntu-medium title">Javakov</span>
-            <span class="ubuntu-regular title">Key Store</span>
-        </div>
-        <label>
-            <input class="ubuntu-regular" type="search" placeholder="Поиск...">
-        </label>
+        <a class="redirect" href="/">
+            <span class="ubuntu-medium javakov">Javakov</span>
+            <span class="ubuntu-regular keystore">Key Store</span>
+        </a>
+        <form th:action="@{/search}" method="get">
+            <label>
+                <input id="searchInput" class="ubuntu-regular" type="search" name="name" placeholder="Поиск...">
+            </label>
+        </form>
     </div>
 </div>
 
-<div id="cardsContainer" class="cards-container">
-    <div class="container">
+<div class="cards-container">
+    <div id="cardsContainer" class="container">
         <div class="card" th:each="game : ${games}">
             <div class="card__title ubuntu-medium">
                 <span th:text="${game.name}"></span>
@@ -42,6 +44,15 @@
 <a class="margin link" href="https://javakov.github.io/me/" target="_blank">
     <div class="footer ubuntu-regular">© 2024 Javakov</div>
 </a>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('name');
+
+    if (searchQuery) {
+        document.getElementById('searchInput').value = searchQuery;
+    }
+</script>
 
 </body>
 </html>

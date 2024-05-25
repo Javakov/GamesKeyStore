@@ -76,9 +76,14 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public Page<GameOutDTO> getAllGames(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
+    public Page<GameOutDTO> getAllGames(Pageable pageable) {
         Page<GameEntity> gamePage = gameRepository.findAll(pageable);
+        return gamePage.map(gameMapper::toDTO);
+    }
+
+    @Override
+    public Page<GameOutDTO> searchGamesByName(String name, Pageable pageable) {
+        Page<GameEntity> gamePage = gameRepository.findByNameContainingIgnoreCase(name, pageable);
         return gamePage.map(gameMapper::toDTO);
     }
 }
