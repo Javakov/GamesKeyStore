@@ -17,8 +17,8 @@
 <div class="margin">
     <div class="search-bar">
         <a class="redirect" href="/">
-            <span class="ubuntu-medium javakov">Javakov</span>
-            <span class="ubuntu-regular keystore">Game Store</span>
+            <span class="ubuntu-medium javakov">Жига</span>
+            <span class="ubuntu-regular keystore">Store</span>
         </a>
         <form th:action="@{/search}" method="get">
             <label>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="cards-container">
-    <div id="cardsContainer" class="container">
+    <div class="container">
         <div class="card" th:each="game : ${games}">
             <div class="card__title ubuntu-medium">
                 <span th:text="${game.name}"></span>
@@ -49,8 +49,9 @@
         <button class="close-popup ubuntu-medium">Выбрать другую игру</button>
     </div>
 </div>
+
 <a class="margin link" href="https://javakov.github.io/me/" target="_blank">
-    <div class="footer ubuntu-regular">© 2024 Javakov</div>
+    <div class="footer ubuntu-regular">© 2024 Jiga Store</div>
 </a>
 
 <script>
@@ -67,6 +68,12 @@
     const popupContainer = document.querySelector('.popup-container');
     const popupText = document.querySelector('#popup-text');
 
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.popup') &&!event.target.closest('.card')) {
+            popupContainer.style.display = 'none';
+        }
+    });
+
     cards.forEach((card) => {
         card.addEventListener('click', () => {
             const gameName = card.querySelector('.card__title span').textContent;
@@ -81,6 +88,5 @@
         popupContainer.style.display = 'none';
     });
 </script>
-
 </body>
 </html>

@@ -27,7 +27,7 @@ public class GameControllerUI {
                               Model model) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         Page<GameOutDTO> gamePage = gameService.getAllGames(pageable);
-        model.addAttribute("title", "Javakov Game Store");
+        model.addAttribute("title", "Jiga Store");
         model.addAttribute("games", gamePage.getContent());
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", gamePage.getTotalPages());
@@ -42,7 +42,7 @@ public class GameControllerUI {
                               Model model) {
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         Page<GameOutDTO> gamePage = gameService.searchGamesByName(name, pageable);
-        model.addAttribute("title", "Search Results");
+        model.addAttribute("title", name);
         model.addAttribute("games", gamePage.getContent());
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", gamePage.getTotalPages());

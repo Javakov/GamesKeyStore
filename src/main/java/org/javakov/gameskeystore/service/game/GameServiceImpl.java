@@ -11,9 +11,7 @@ import org.javakov.gameskeystore.mapper.GameMapper;
 import org.javakov.gameskeystore.repository.GameRepository;
 import org.javakov.gameskeystore.service.firebase.FirebaseService;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Slf4j
